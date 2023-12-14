@@ -34,3 +34,49 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+var usersCollectionRef = db.collection('users');
+
+
+function validateForm() {
+  var name = document.getElementById('email').value;
+  var username = document.getElementById('username').value;
+  var phone = document.getElementById('phone').value;
+  var educationLevel = document.getElementById('educationLevel').value;
+  if (name === '') {
+    alert('Please enter your name');
+    return false;
+  }
+
+  if (username === '') {
+    alert('Please enter a username');
+    return false;
+  }
+
+  if (phone === '') {
+    alert('Please enter a phone number');
+    return false;
+  }
+
+  if (educationLevel === '') {
+    alert('Please enter your education level');
+    return false;
+  }
+  return true;
+}
+
+document.getElementById('singup_auth').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  if (validateForm()) {
+    submitForm();
+  }
+});
+
+const submitForm = () => {
+  usersCollectionRef.add(userData)
+  .then(function(docRef) {
+    console.log('User data saved with ID: ', docRef.id);
+  })
+  .catch(function(error) {
+    console.error('Error adding user data: ', error);
+  });
+} 
