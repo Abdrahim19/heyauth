@@ -21,3 +21,16 @@ function moveToNext(elem, count) {
         document.getElementById("digit" + count + "-input").focus();
     }
 }
+
+
+// add firebase to the project
+const firebaseConfig = {
+  apiKey: "AIzaSyAsO8amTJnzVndoz0uRfVlGifgHDE0mUkM",
+  authDomain: "heyauth-4a3ab.firebaseapp.com",
+  projectId: "heyauth-4a3ab",
+  storageBucket: "heyauth-4a3ab.appspot.com",
+  messagingSenderId: "943518805455",
+  appId: "1:943518805455:web:5b387e0e94d55fa572f6ba"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();

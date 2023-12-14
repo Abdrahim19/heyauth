@@ -830,7 +830,7 @@ body {
 }
 
 .auth-box {
-  padding: 50px 114px;
+  padding: 50px 100px;
 }
 
 .auth-contain {
@@ -1056,5 +1056,10 @@ body {
 .font_ar {
   font-family: 'Noto Sans Arabic', sans-serif;
   font-weight: 600;
+}
+
+.revers-label {
+  width: 100%;
+  text-align: end;
 }
 /*# sourceMappingURL=style.css.map */
